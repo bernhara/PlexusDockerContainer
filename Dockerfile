@@ -32,7 +32,9 @@ RUN apt-get -y install \
 # FIXME: should be take from it's source respistory
 #
 COPY plexus.tar.xz /tmp/plexus.tar.xz
-RUN mkdir -p /opt/PlexusSrc && xzcat /tmp/plexus.tar.xz | tar --extract --directory=/opt/PlexusSrc --file=-
+RUN mkdir -p /opt/PlexusSrc && \
+    xzcat /tmp/plexus.tar.xz | tar --extract --directory=/opt/PlexusSrc --file=- && \
+    rm -f /tmp/plexus.tar.xz
 
 #
 # Plexus GPU compilation
