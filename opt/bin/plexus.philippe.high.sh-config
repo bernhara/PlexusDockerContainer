@@ -1,0 +1,14 @@
+set -x
+
+: ${MESU_FLAG:=0}
+
+: ${OPT=/opt}
+
+: ${WORKDIR_ROOT:=/tmp}
+
+: ${DEPTH:=1}
+
+: ${WORKING_PATH=/data}
+
+set +x
+
