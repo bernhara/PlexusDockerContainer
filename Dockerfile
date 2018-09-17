@@ -28,10 +28,15 @@ RUN apt-get -y install \
     apt-get clean
 
 #
+# Get plexus source code
+# FIXME: should be take from it's source respistory
+#
+COPY plexus.tar.xz /tmp/plexus.tar.xz
+RUN mkdir -p /opt/PlexusSrc && xzcat /tmp/plexus.tar.xz | tar --extract --directory=/opt/PlexusSrc --file=-
+
+#
 # Plexus GPU compilation
 #
-COPY PlexusSrc/ /opt/PlexusSrc
-
 WORKDIR /opt/PlexusSrc
 
 RUN mkdir build && cd build && cmake -D BOOST_STATIC=OFF .. && make
