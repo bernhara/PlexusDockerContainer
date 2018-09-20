@@ -1,9 +1,12 @@
 #
 
+ARG PLEXUS_CUDA_VERSION="9.2"
+ARG PLEXUS_UBUNTU_IMAGE_VERSION="18.04"
+
 # docker build -t plexus_gpu .
 # nvidia-docker run -ti --rm plexus_gpu
 
-FROM nvidia/cudagl:9.2-devel-ubuntu18.04
+FROM nvidia/cudagl:${PLEXUS_CUDA_VERSION}-devel-ubuntu${PLEXUS_UBUNTU_IMAGE_VERSION}
 
 ENV NVIDIA_REQUIRE_DRIVER "driver>=390"
 
