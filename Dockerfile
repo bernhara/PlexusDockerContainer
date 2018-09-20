@@ -1,7 +1,7 @@
 #
 
-ARG PLEXUS_CUDA_VERSION="9.2"
-ARG PLEXUS_UBUNTU_IMAGE_VERSION="18.04"
+ARG PLEXUS_CUDA_VERSION=9.2
+ARG PLEXUS_UBUNTU_IMAGE_VERSION=16.04
 
 # docker build -t plexus_gpu .
 # nvidia-docker run -ti --rm plexus_gpu
